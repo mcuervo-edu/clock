@@ -126,7 +126,11 @@ while (Set == 2) {
     basic.showString("M")
 }
 basic.clearScreen()
-loops.everyInterval(1000, function () {
+basic.forever(function () {
+    displayH()
+    displayM()
+})
+loops.everyInterval(800, function () {
     led.unplot(2, 1)
     led.unplot(2, 3)
     Second += 1
@@ -134,11 +138,7 @@ loops.everyInterval(1000, function () {
         Second = 0
         changeM()
     }
-    basic.pause(100)
+    basic.pause(200)
     led.plot(2, 1)
     led.plot(2, 3)
-})
-basic.forever(function () {
-    displayH()
-    displayM()
 })
